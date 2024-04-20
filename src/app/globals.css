@@ -2,32 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+  background-color: #fff;
+  color: rgba(14, 15, 16, 1);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.modal-wrapper{
+display: flex;
+justify-content: center;
+align-items: center;
+transition: visibility 0.5s, opacity 0.5s ease-in-out;
+}
+
+.show-modal{
+  visibility: visible;
+  opacity: 1;
+}
+
+.out {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.show-modal .modal {
+   animation: blowUpModal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+ }
+
+.out .modal {
+      animation: blowUpModalTwo 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+
+@keyframes blowUpModal {
+  0% {
+   transform: scale(0);
+  }
+    
+  100% {
+   transform: scale(1);
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+    
+@keyframes blowUpModalTwo {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+    
+  100% {
+    transform: scale(0);
+    opacity: 0;
   }
 }

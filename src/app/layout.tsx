@@ -3,9 +3,25 @@ import localFont from 'next/font/local'
 import "./globals.css";
 
 const myFont = localFont({
-   src: './RMNeueTRIAL-Regular.woff',
-  display: 'swap',
-})
+  src:[
+    {
+     path: './fonts/RMNeueTRIAL-Light.woff',
+     weight: '300',
+     style: 'normal',
+    },
+    {
+     path: './fonts/RMNeueTRIAL-Regular.woff',
+     weight: '400',
+     style: 'normal',
+    },
+    {
+     path: './fonts/RMNeueTRIAL-Bold.woff',
+     weight: '700',
+     style: 'normal',
+    }
+  ]
+}
+)
 
 export const metadata: Metadata = {
   title: "Create Next App",

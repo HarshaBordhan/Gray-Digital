@@ -10,6 +10,7 @@ body{
   font-weight: 400;
 }
 
+/* log-in modal */
 .modal-wrapper{
 display: flex;
 justify-content: center;
@@ -55,4 +56,13 @@ transition: visibility 0.5s, opacity 0.5s ease-in-out;
     transform: scale(0);
     opacity: 0;
   }
+}
+
+/* roadmap */
+.dot-1 svg{
+  stroke: #5865F1
+}
+
+.dot svg{
+  stroke: #9FA1BA
 }

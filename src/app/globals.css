@@ -59,10 +59,37 @@ transition: visibility 0.5s, opacity 0.5s ease-in-out;
 }
 
 /* roadmap */
-.dot-1 svg{
-  stroke: #5865F1
+.dot svg {
+  stroke: #9FA1BA
 }
 
-.dot svg{
-  stroke: #9FA1BA
+.dot-1 svg{
+  stroke: rgba(88, 101, 241, 1)
+}
+
+/* .dot-1 svg{
+  animation: check 0.4s linear forwards;
+}
+
+@keyframes check {
+  0% {
+    stroke: #9FA1BA
+  }
+  100% {
+    stroke: rgba(88, 101, 241, 1)
+  }
+}  */
+
+.line-fill-2{
+  animation: progress 0.4s linear forwards;
+}
+
+
+@keyframes progress {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 27%;
+  }
 }

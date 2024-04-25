@@ -1,6 +1,44 @@
+'use client'
+
+import { useState } from "react";
+
 import { Check } from "@/components/icons/Icons";
+import { useEffect } from "react";
 
 export default function RoadMap() {
+const [progress, setProgress] = useState<number | null>(0);
+
+useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      const scrollPosition = window.scrollY;
+      const timeline = document.querySelector('.scrollEl') as HTMLElement;
+      const timelineTop = timeline.getBoundingClientRect().top;
+      const timelineLine = document.querySelector('.line-fill') as HTMLElement;
+
+      if (timelineTop < windowHeight && timelineTop > -timeline.offsetHeight) {
+        const timelineHeight = timeline.offsetHeight;
+        const newProgress = ((windowHeight + scrollPosition - timelineTop) / (timelineHeight + windowHeight)) * 100 - 10;
+         if (newProgress >= 0 && newProgress <= 100) {
+          setProgress(newProgress);
+          timelineLine.style.height = `${newProgress}%`;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const dotClass = (percentage: any) => {
+    return progress !== null && progress >= percentage ? 'dot-1' : '';
+  };
+
+  console.log(progress)
+
   return(
     <>
     <section>
@@ -11,21 +49,24 @@ export default function RoadMap() {
             <p className="text-[rgba(75,77,104,1)]">One strategic step at a time. Forward always.</p>
           </div>
         </div>
+
         <div className="right w-1/2">
-          <div className="flex gap-20 pl-4 w-full h-full">
+          <div className="scrollEl flex gap-20 pl-4 w-full h-full">
            <div className="w-px h-full relative bg-[rgba(0,0,0,0.12)]">
-            <div className="dot-1 w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[27%] z-[3]">
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[27%] z-[3] ${dotClass(27)}`}>
               <Check/>
             </div>
-            <div className="dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[49%] z-[3]">
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[49%] z-[3] ${dotClass(49)}`}>
               <Check/>
             </div>
-            <div className="dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[65%] z-[3]">
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[65%] z-[3] ${dotClass(65)}`}>
               <Check/>
             </div>
-            <div className="dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[87%] z-[3]">
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[87%] z-[3] ${dotClass(87)}`}>
               <Check/>
             </div>
+            <div className="line-fill w-full bg-[rgba(88,101,241,1)]" style={{ height: `${progress}%`}}></div>
+            <div className="line-fill-2 absolute inset-0 w-full bg-[rgba(88,101,241,1)]"></div>
            </div>
            <div className="flex flex-col gap-28 relative">
             {/* <div className="blur-overlay absolute left-0 top-0 w-full h-1/4 backdrop-blur-sm"></div> */}
@@ -84,8 +125,7 @@ export default function RoadMap() {
                 <p className="text-sm text-[rgba(159,161,186,1)]">May 2023</p>
               </div>
             </div>    
-           </div>
-           
+           </div>        
           </div>
         </div>
       </div>

@@ -24,7 +24,19 @@ useEffect(() => {
           timelineLine.style.height = `${newProgress}%`;
         }
       }
-    };
+
+      const contentSections = document.querySelectorAll('.content') as NodeListOf<Element>;
+
+      contentSections.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if (sectionTop < timeline.offsetHeight * 0.27) {
+      section.classList.add('blur-transition');
+      } else {
+      section.classList.remove('blur-transition');
+      }
+      });
+      };
+    
 
     window.addEventListener('scroll', handleScroll);
 
@@ -34,7 +46,7 @@ useEffect(() => {
   }, []);
 
   const dotClass = (percentage: any) => {
-    return progress !== null && progress >= percentage ? 'dot-1' : '';
+    return progress !== null && progress >= percentage ? 'dot-fill' : '';
   };
 
   console.log(progress)
@@ -43,17 +55,17 @@ useEffect(() => {
     <>
     <section>
       <div className="flex">
-        <div className="left flex justify-center items-center w-1/2 h-screen sticky top-0">
-          <div className="flex flex-col gap-4">
+        <div className="left w-1/2 flex justify-center items-center h-screen sticky top-0">
+            <div className="flex flex-col gap-4">
             <h2 className="text-4xl font-bold ">Gray Market Roadmap</h2>
             <p className="text-[rgba(75,77,104,1)]">One strategic step at a time. Forward always.</p>
-          </div>
+            </div>
         </div>
 
         <div className="right w-1/2">
           <div className="scrollEl flex gap-20 pl-4 w-full h-full">
            <div className="w-px h-full relative bg-[rgba(0,0,0,0.12)]">
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[27%] z-[3] ${dotClass(27)}`}>
+            <div className={`dot dot-one w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[27%] z-[3] ${dotClass(27)}`}>
               <Check/>
             </div>
             <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[49%] z-[3] ${dotClass(49)}`}>
@@ -68,10 +80,10 @@ useEffect(() => {
             <div className="line-fill w-full bg-[rgba(88,101,241,1)]" style={{ height: `${progress}%`}}></div>
             <div className="line-fill-2 absolute inset-0 w-full bg-[rgba(88,101,241,1)]"></div>
            </div>
-           <div className="flex flex-col gap-28 relative">
-            {/* <div className="blur-overlay absolute left-0 top-0 w-full h-1/4 backdrop-blur-sm"></div> */}
+           <div className="relative flex flex-col gap-28 h-full">
             <div className="w-full h-[32vh]"></div>
-            <div className="flex flex-col items-start gap-6"> 
+            <div className="flex flex-col gap-28 px-4">
+             <div className="content flex flex-col items-start gap-6"> 
               <div className="px-3 py-1 text-[rgba(255,255,255,1)] bg-[rgba(88,101,241,1)] rounded-full">Q2 – 2022</div>  
               <div className="flex flex-col gap-1">
                 <h4 className="text-xl text-[rgba(18,18,23,1)]">
@@ -86,7 +98,7 @@ useEffect(() => {
                 <p className="text-sm text-[rgba(159,161,186,1)]">March 2022</p>
               </div>
             </div>    
-            <div className="flex flex-col items-start gap-6"> 
+            <div className="content flex flex-col items-start gap-6"> 
               <div className="px-3 py-1 text-[rgba(255,255,255,1)] bg-[rgba(88,101,241,1)] rounded-full">Q4 – 2022</div>  
               <div className="flex flex-col gap-1">
                 <h4 className="text-xl text-[rgba(18,18,23,1)]">
@@ -95,7 +107,7 @@ useEffect(() => {
                 <p className="text-sm text-[rgba(159,161,186,1)]">December 2022</p>
               </div>
             </div>    
-            <div className="flex flex-col items-start gap-6"> 
+            <div className="content flex flex-col items-start gap-6"> 
               <div className="px-3 py-1 text-[rgba(255,255,255,1)] bg-[rgba(88,101,241,1)] rounded-full">Q2 – 2023</div>  
               <div className="flex flex-col gap-1">
                 <h4 className="text-xl text-[rgba(18,18,23,1)]">
@@ -110,7 +122,7 @@ useEffect(() => {
                 <p className="text-sm text-[rgba(159,161,186,1)]">May 2023</p>
               </div>
             </div>    
-            <div className="flex flex-col items-start gap-6"> 
+            <div className="content flex flex-col items-start gap-6"> 
               <div className="px-3 py-1 text-[rgba(255,255,255,1)] bg-[rgba(88,101,241,1)] rounded-full">Q3 – 2023</div>  
               <div className="flex flex-col gap-1">
                 <h4 className="text-xl text-[rgba(18,18,23,1)]">
@@ -124,7 +136,8 @@ useEffect(() => {
                 </h4>
                 <p className="text-sm text-[rgba(159,161,186,1)]">May 2023</p>
               </div>
-            </div>    
+            </div>  
+            </div>
            </div>        
           </div>
         </div>

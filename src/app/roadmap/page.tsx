@@ -62,7 +62,8 @@ useEffect(() => {
             </div>
         </div>
 
-        <div className="right w-1/2">
+        <div className="right w-1/2 flex flex-col">
+          <div className="w-full">
           <div className="scrollEl flex gap-20 pl-4 w-full h-full">
            <div className="w-px h-full relative bg-[rgba(0,0,0,0.12)]">
             <div className={`dot dot-one w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[27%] z-[3] ${dotClass(27)}`}>
@@ -140,11 +141,14 @@ useEffect(() => {
             </div>
            </div>        
           </div>
+          </div>
+          <div className="h-[44vh]"></div>
         </div>
       </div>
     </section>
 
-    <section className="h-screen"></section>
+    <section className="h-screen">
+    </section>
     </>
   )
 }

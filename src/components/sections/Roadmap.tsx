@@ -20,11 +20,7 @@ useEffect(() => {
 
       if (timelineTop < windowHeight && timelineTop > -timeline.offsetHeight) {
         const timelineHeight = timeline.offsetHeight;
-        const newProgressStart = ((windowHeight + scrollPosition - timelineTop) / (timelineHeight + windowHeight)) * 100 - 32;
-        const newProgressEnd = ((windowHeight + scrollPosition - timelineTop) / (timelineHeight + windowHeight)) * 100 - 10;
-
-        // const newProgress = newProgressStart >= 0 ? newProgressStart : newProgressEnd;
-        const newProgress = Math.min(Math.max(newProgressStart, 0), newProgressEnd);
+        const newProgress = ((windowHeight + scrollPosition - timelineTop) / (timelineHeight + windowHeight)) * 100 - 44;
         
          if (newProgress >= 0 && newProgress <= 100) {
           setProgress(newProgress);
@@ -64,9 +60,9 @@ useEffect(() => {
     <section className="py-16">
       <Container> 
       <div className="flex">
-        <div className="left w-1/2">
-            <div className="flex flex-col gap-4 pt-[56%] sticky top-0">
-            {/* <div className="flex flex-col gap-4"> */}
+        <div className="left w-1/2 flex justify-start items-center h-screen sticky top-0">
+            {/* <div className="flex flex-col gap-4 pt-[56%] sticky top-0"> */}
+            <div className="flex flex-col gap-4">
             <h2 className="text-4xl font-bold ">Gray Market Roadmap</h2>
             <p className="text-[rgba(75,77,104,1)]">One strategic step at a time. Forward always.</p>
             </div>
@@ -76,36 +72,32 @@ useEffect(() => {
           <div className="w-full">
           <div className="scrollEl flex gap-20 pl-4 w-full h-full relative">
          
-         <div className="h-screen sticky top-0">
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] bottom-0 z-[5] overflow-hidden ${dotClass(96)}`}>
+          <div className="w-px h-full bg-[rgba(0,0,0,0.12)]">
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-0 top-[27%] z-[3] ${dotClass(27)}`}>
+              <Check/>
+            </div>
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-0 top-[48.8%] z-[3] ${dotClass(48.8)}`}>
+              <Check/>
+            </div>
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-0 top-[64.8%] z-[3] ${dotClass(64.8)}`}>
+              <Check/>
+            </div>
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-0 top-[86.7%] z-[3] ${dotClass(86.7)}`}>
+              <Check/>
+            </div>
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-0 bottom-0 z-[5] ${dotClass(98)}`}>
               <Pending />
             </div>
-
-           <div className="w-px h-full bg-[rgba(0,0,0,0.12)]">
             <div className="line-fill w-full bg-[rgba(88,101,241,1)]" style={{ height: `${progress}%`}}></div>
             {/* <div className="line-fill-2 absolute inset-0 w-full bg-[rgba(88,101,241,1)]"></div> */}
            </div>     
 
-         </div>
-
            <div className="dots">
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-0 top-[27%] z-[3] ${dotClass(45)}`}>
-              <Check/>
-            </div>
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-0 top-[48.8%] z-[3] ${dotClass(63)}`}>
-              <Check/>
-            </div>
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-0 top-[64.8%] z-[3] ${dotClass(74)}`}>
-              <Check/>
-            </div>
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-0 top-[86.7%] z-[3] ${dotClass(90)}`}>
-              <Check/>
-            </div>
            </div>
 
            <div className="relative flex flex-col gap-28 h-full">
             <div className="w-full h-[32vh]"></div>
-            <div className="flex flex-col gap-28 px-4">
+            <div className="flex flex-col gap-28">
              <div className="content flex flex-col items-start gap-6"> 
               <div className="px-3 py-1 text-[rgba(255,255,255,1)] bg-[rgba(88,101,241,1)] rounded-full">Q2 – 2022</div>  
               <div className="flex flex-col gap-1">
@@ -164,7 +156,7 @@ useEffect(() => {
            </div>        
           </div>
           </div>
-          {/* <div className="h-[44vh]"></div> */}
+          <div className="h-[44vh]"></div>
         </div>
       </div>
       </Container>

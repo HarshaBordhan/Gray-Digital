@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main>
       <Navbar/>
-      <div className='w-full h-screen'>
+      <div className='w-full'>
       <SectionOne/>
       <Marquee/>
       </div>

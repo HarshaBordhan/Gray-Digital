@@ -83,7 +83,7 @@ useEffect(() => {
             <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[74.4%] z-[3] ${dotClass(74.4)}`}>
               <Check/>
             </div>
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[99%] z-[3] ${dotClass(99)}`}>
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[99%] z-[3] ${dotClass(98)}`}>
               <Pending/>
             </div>
             {/* <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[100%] z-[3] ${dotClass(99)}`}>
@@ -153,7 +153,7 @@ useEffect(() => {
            </div>        
           </div>
           </div>
-          <div className="h-[25vh]"></div>
+          <div className="h-[28vh]"></div>
         </div>
       </div>
     </section>

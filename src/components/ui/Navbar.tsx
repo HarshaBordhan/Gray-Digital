@@ -11,7 +11,7 @@ export default function Navbar() {
 const ref = useRef<HTMLDivElement>(null); 
 
   return (
-    <nav className="border-b border-[rgba(0,0,0,0.08)]">
+    <nav className="border-b border-[rgba(0,0,0,0.08)] bg-white">
       <Container> 
        <div className="py-[18px] flex justify-between items-center">
         <span className="cursor-pointer">

@@ -65,7 +65,7 @@ useEffect(() => {
       <Container> 
       <div className="flex">
         <div className="left w-1/2">
-            <div className="flex flex-col gap-4 pt-[75%] sticky top-0">
+            <div className="flex flex-col gap-4 pt-[56%] sticky top-0">
             {/* <div className="flex flex-col gap-4"> */}
             <h2 className="text-4xl font-bold ">Gray Market Roadmap</h2>
             <p className="text-[rgba(75,77,104,1)]">One strategic step at a time. Forward always.</p>

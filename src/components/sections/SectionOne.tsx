@@ -6,7 +6,7 @@ export default function SectionOne() {
   return(
     <section>
       <Container>
-      <div className="flex justify-between items-center pt-16">
+      <div className="flex justify-between items-center pt-16 h-[90vh]">
         <div className="left flex flex-col justify-between items-start gap-6">
          <button className="flex items-center gap-1 pl-2.5 pr-[14px] py-1 border border-[rgba(50,66,238,1)] rounded-full text-[rgba(75,77,104,1)]">
           <span><Resume/></span>

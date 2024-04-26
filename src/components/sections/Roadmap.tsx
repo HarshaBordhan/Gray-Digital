@@ -71,9 +71,8 @@ useEffect(() => {
         <div className="right w-1/2 flex flex-col">
           <div className="w-full">
           <div className="scrollEl flex gap-20 pl-4 w-full h-full relative">
-         
-          <div className="w-px h-full bg-[rgba(0,0,0,0.12)]">
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-0 top-[27%] z-[3] ${dotClass(27)}`}>
+            <div className="w-px h-full bg-[rgba(0,0,0,0.12)]">
+             <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-0 top-[27%] z-[3] ${dotClass(27)}`}>
               <Check/>
             </div>
             <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-0 top-[48.8%] z-[3] ${dotClass(48.8)}`}>
@@ -90,15 +89,12 @@ useEffect(() => {
             </div>
             <div className="line-fill w-full bg-[rgba(88,101,241,1)]" style={{ height: `${progress}%`}}></div>
             {/* <div className="line-fill-2 absolute inset-0 w-full bg-[rgba(88,101,241,1)]"></div> */}
-           </div>     
+            </div>    
 
-           <div className="dots">
-           </div>
-
-           <div className="relative flex flex-col gap-28 h-full">
+            <div className="relative flex flex-col gap-28 w-full h-full">
             <div className="w-full h-[32vh]"></div>
-            <div className="flex flex-col gap-28">
-             <div className="content flex flex-col items-start gap-6"> 
+            <div className="w-full flex flex-col gap-28">
+              <div className="content flex flex-col items-start gap-6"> 
               <div className="px-3 py-1 text-[rgba(255,255,255,1)] bg-[rgba(88,101,241,1)] rounded-full">Q2 – 2022</div>  
               <div className="flex flex-col gap-1">
                 <h4 className="text-xl text-[rgba(18,18,23,1)]">
@@ -112,8 +108,8 @@ useEffect(() => {
                 </h4>
                 <p className="text-sm text-[rgba(159,161,186,1)]">March 2022</p>
               </div>
-            </div>    
-            <div className="content flex flex-col items-start gap-6"> 
+              </div>    
+              <div className="content flex flex-col items-start gap-6"> 
               <div className="px-3 py-1 text-[rgba(255,255,255,1)] bg-[rgba(88,101,241,1)] rounded-full">Q4 – 2022</div>  
               <div className="flex flex-col gap-1">
                 <h4 className="text-xl text-[rgba(18,18,23,1)]">
@@ -121,8 +117,8 @@ useEffect(() => {
                 </h4>
                 <p className="text-sm text-[rgba(159,161,186,1)]">December 2022</p>
               </div>
-            </div>    
-            <div className="content flex flex-col items-start gap-6"> 
+              </div>    
+              <div className="content flex flex-col items-start gap-6"> 
               <div className="px-3 py-1 text-[rgba(255,255,255,1)] bg-[rgba(88,101,241,1)] rounded-full">Q2 – 2023</div>  
               <div className="flex flex-col gap-1">
                 <h4 className="text-xl text-[rgba(18,18,23,1)]">
@@ -136,8 +132,8 @@ useEffect(() => {
                 </h4>
                 <p className="text-sm text-[rgba(159,161,186,1)]">May 2023</p>
               </div>
-            </div>    
-            <div className="content flex flex-col items-start gap-6"> 
+              </div>    
+              <div className="content flex flex-col items-start gap-6"> 
               <div className="px-3 py-1 text-[rgba(255,255,255,1)] bg-[rgba(88,101,241,1)] rounded-full">Q3 – 2023</div>  
               <div className="flex flex-col gap-1">
                 <h4 className="text-xl text-[rgba(18,18,23,1)]">
@@ -151,9 +147,9 @@ useEffect(() => {
                 </h4>
                 <p className="text-sm text-[rgba(159,161,186,1)]">May 2023</p>
               </div>
-            </div>  
+              </div>  
             </div>
-           </div>        
+            </div>        
           </div>
           </div>
           <div className="h-[44vh]"></div>
@@ -161,9 +157,6 @@ useEffect(() => {
       </div>
       </Container>
     </section>
-
-    {/* <section className="h-screen">
-    </section> */}
     </>
   )
 }

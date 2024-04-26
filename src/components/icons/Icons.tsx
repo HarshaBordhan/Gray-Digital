@@ -250,4 +250,24 @@ const Check = () => {
   )
 }
 
-export {NavLogo, Dots, FingerPrint, DownArrow, Profile, Resume, Lock, Wallet, Language, Close, Check}
+const Pending = () => {
+  return(
+     <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="25"
+      fill="none"
+      viewBox="0 0 24 25"
+    >
+      <path
+        // stroke="#5865F1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M5 22.941h14M5 2.941h14M17 22.941V18.77a2 2 0 00-.586-1.414L12 12.941l-4.414 4.414A2 2 0 007 18.77v4.172M7 2.941v4.172a2 2 0 00.586 1.414L12 12.941l4.414-4.414A2 2 0 0017 7.113V2.941"
+      ></path>
+    </svg>
+  )
+}
+
+export {NavLogo, Dots, FingerPrint, DownArrow, Profile, Resume, Lock, Wallet, Language, Close, Check, Pending}

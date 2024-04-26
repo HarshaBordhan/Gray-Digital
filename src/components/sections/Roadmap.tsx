@@ -14,11 +14,17 @@ useEffect(() => {
       const scrollPosition = window.scrollY;
       const timeline = document.querySelector('.scrollEl') as HTMLElement;
       const timelineTop = timeline.getBoundingClientRect().top;
+
       const timelineLine = document.querySelector('.line-fill') as HTMLElement;
 
       if (timelineTop < windowHeight && timelineTop > -timeline.offsetHeight) {
         const timelineHeight = timeline.offsetHeight;
-        const newProgress = ((windowHeight + scrollPosition - timelineTop) / (timelineHeight + windowHeight)) * 100 - 10;
+        const newProgressStart = ((windowHeight + scrollPosition - timelineTop) / (timelineHeight + windowHeight)) * 100 - 40;
+        const newProgressEnd = ((windowHeight + scrollPosition - timelineTop) / (timelineHeight + windowHeight)) * 100 - 10;
+
+        // const newProgress = newProgressStart >= 0 ? newProgressStart : newProgressEnd;
+        const newProgress = Math.min(Math.max(newProgressStart, 0), newProgressEnd);
+        
          if (newProgress >= 0 && newProgress <= 100) {
           setProgress(newProgress);
           timelineLine.style.height = `${newProgress}%`;
@@ -26,17 +32,18 @@ useEffect(() => {
       }
 
       const contentSections = document.querySelectorAll('.content') as NodeListOf<Element>;
-
+  
       contentSections.forEach((section) => {
       const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop < timeline.offsetHeight * 0.27) {
+      if (sectionTop < timeline.offsetHeight * 0.16) {
       section.classList.add('blur-transition');
       } else {
       section.classList.remove('blur-transition');
       }
       });
-      };
-    
+
+      console.log("The event is firing")
+    };
 
     window.addEventListener('scroll', handleScroll);
 
@@ -66,7 +73,7 @@ useEffect(() => {
           <div className="w-full">
           <div className="scrollEl flex gap-20 pl-4 w-full h-full">
            <div className="w-px h-full relative bg-[rgba(0,0,0,0.12)]">
-            <div className={`dot dot-one w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[27%] z-[3] ${dotClass(27)}`}>
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[27%] z-[3] ${dotClass(27)}`}>
               <Check/>
             </div>
             <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[49%] z-[3] ${dotClass(49)}`}>
@@ -82,7 +89,7 @@ useEffect(() => {
               <Pending />
             </div>
             <div className="line-fill w-full bg-[rgba(88,101,241,1)]" style={{ height: `${progress}%`}}></div>
-            <div className="line-fill-2 absolute inset-0 w-full bg-[rgba(88,101,241,1)]"></div>
+            {/* <div className="line-fill-2 absolute inset-0 w-full bg-[rgba(88,101,241,1)]"></div> */}
            </div>
            <div className="relative flex flex-col gap-28 h-full">
             <div className="w-full h-[32vh]"></div>

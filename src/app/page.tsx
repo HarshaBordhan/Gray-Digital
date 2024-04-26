@@ -7,9 +7,12 @@ export default function Home() {
   return (
     <main>
       <Navbar/>
+      <div className='w-full h-screen'>
       <SectionOne/>
       <Marquee/>
+      </div>
       <RoadMap/>
+      <section className='h-screen bg-gray-400'></section>
     </main>  
   );
 }

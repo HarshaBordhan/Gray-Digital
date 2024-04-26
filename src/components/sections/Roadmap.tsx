@@ -62,7 +62,8 @@ useEffect(() => {
     <>
     <section>
       <div className="flex">
-        <div className="left w-1/2 flex justify-center items-center h-screen sticky top-0">
+        <div className="left w-1/2 flex justify-center h-screen items-center sticky top-0">
+            {/* <div className="flex flex-col gap-4 pt-[75%] pb-[35%] sticky top-0"> */}
             <div className="flex flex-col gap-4">
             <h2 className="text-4xl font-bold ">Gray Market Roadmap</h2>
             <p className="text-[rgba(75,77,104,1)]">One strategic step at a time. Forward always.</p>
@@ -72,22 +73,22 @@ useEffect(() => {
         <div className="right w-1/2 flex flex-col">
           <div className="w-full">
           <div className="scrollEl flex gap-20 pl-4 w-full h-full">
-           <div className="w-px h-full relative bg-[rgba(0,0,0,0.12)]">
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[27%] z-[3] ${dotClass(27)}`}>
+           <div className="w-px h-[87%] relative bg-[rgba(0,0,0,0.12)]">
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[31%] z-[3] ${dotClass(31)}`}>
               <Check/>
             </div>
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[49%] z-[3] ${dotClass(49)}`}>
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[56%] z-[3] ${dotClass(56)}`}>
               <Check/>
             </div>
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[65%] z-[3] ${dotClass(65)}`}>
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[74.4%] z-[3] ${dotClass(74.4)}`}>
               <Check/>
             </div>
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[87%] z-[3] ${dotClass(87)}`}>
-              <Check/>
+            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[99%] z-[3] ${dotClass(99)}`}>
+              <Pending/>
             </div>
-            <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[100%] z-[3] ${dotClass(99)}`}>
+            {/* <div className={`dot w-8 h-8 rounded-full bg-white flex justify-center items-center absolute left-[-15px] top-[100%] z-[3] ${dotClass(99)}`}>
               <Pending />
-            </div>
+            </div> */}
             <div className="line-fill w-full bg-[rgba(88,101,241,1)]" style={{ height: `${progress}%`}}></div>
             {/* <div className="line-fill-2 absolute inset-0 w-full bg-[rgba(88,101,241,1)]"></div> */}
            </div>
@@ -152,13 +153,13 @@ useEffect(() => {
            </div>        
           </div>
           </div>
-          <div className="h-[44vh]"></div>
+          <div className="h-[25vh]"></div>
         </div>
       </div>
     </section>
 
-    <section className="h-screen">
-    </section>
+    {/* <section className="h-screen">
+    </section> */}
     </>
   )
 }
